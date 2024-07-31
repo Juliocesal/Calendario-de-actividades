@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Card Duel - Tienda de Decks de Cartas</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        /* Cabecera */
+        header {
+            background: #333;
+            color: #fff;
+            padding: 30px 0;
+            border-bottom: 3px solid #77d5d4;
+        }
+
+        header h1 {
+            text-align: center;
+            text-transform: uppercase;
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        nav {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        nav ul {
+            padding: 0;
+            list-style: none;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        /* Sección Hero */
+        .hero {
+            background: url('hero-bg.jpg') no-repeat center center/cover;
+            color: #fff;
+            height: 400px;
+            text-align: center;
+            padding-top: 150px;
+            position: relative;
+        }
+
+        .hero h2 {
+            margin: 0;
+            font-size: 3em;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+        }
+
+        .hero .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #77d5d4;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+
+        .hero .btn:hover {
+            background: #66c2c2;
+        }
+
+        /* Sección de productos */
+        .productos {
+            padding: 50px 0;
+            background: #fff;
+            text-align: center;
+        }
+
+        .productos h2 {
+            margin-bottom: 40px;
+            font-size: 2.5em;
+            color: #333;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: #f4f4f4;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            margin: 20px;
+            width: 300px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .card h3 {
+            margin: 10px 0;
+            font-size: 1.5em;
+        }
+
+        .card p {
+            font-size: 1em;
+            color: #666;
+        }
+
+        .card .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #77d5d4;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 10px;
+            font-size: 1.2em;
+        }
+
+        .card .btn:hover {
+            background: #66c2c2;
+        }
+
+        /* Sección de beneficios */
+        .beneficios {
+            padding: 50px 0;
+            background: #eee;
+        }
+
+        .beneficios h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+            color: #333;
+        }
+
+        .benefits {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .benefit {
+            width: 30%;
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .benefit h3 {
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+
+        .benefit p {
+            font-size: 1em;
+            color: #666;
+        }
+
+        /* Sección de contacto */
+        .contacto {
+            padding: 50px 0;
+            background: #fff;
+            text-align: center;
+        }
+
+        .contacto h2 {
+            margin-bottom: 40px;
+            font-size: 2.5em;
+            color: #333;
+        }
+
+        .contacto form {
+            width: 50%;
+            margin: auto;
+        }
+
+        .contacto form label {
+            display: block;
+            text-align: left;
+            font-size: 1.2em;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .contacto form input,
+        .contacto form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .contacto form button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #77d5d4;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.2em;
+            border: none;
+            cursor: pointer;
+        }
+
+        .contacto form button:hover {
+            background: #66c2c2;
+        }
+
+        /* Pie de página */
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 30px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1em;
+        }
+
+        /* Responsividad */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+
+            .cards {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card {
+                width: 90%;
+            }
+
+            .benefits {
+                flex-direction: column;
+            }
+
+            .benefit {
+                width: 90%;
+                margin: 10px 0;
+            }
+
+            .contacto form {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Royal Card Duel</h1>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#beneficios">Beneficios</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="container">
+            <h2>Bienvenido a Royal Card Duel</h2>
+            <p>Descubre la magia y la emoción de nuestros exclusivos decks de cartas. Compra ahora y lleva la batalla a tu hogar.</p>
+            <a href="#productos" class="btn">Ver Productos</a>
+        </div>
+    </section>
+
+    <section id="productos" class="productos">
+        <div class="container">
+            <h2>Nuestros Productos</h2>
+            <div class="cards">
+                <div class="card">
+                    <img src="deck1.jpg" alt="Deck Legendario">
+                    <h3>Deck Legendario</h3>
+                    <p>Incluye cartas raras y poderosas para tus duelos más épicos.</p>
+                    <a href="#" class="btn">Comprar Ahora</a>
+                </div>
+                <div class="card">
+                    <img src="deck2.jpg" alt="Deck Épico">
+                    <h3>Deck Épico</h3>
+                    <p>Una selección equilibrada de cartas para jugadores avanzados.</p>
+                    <a href="#" class="btn">Comprar Ahora</a>
+                </div>
+                <div class="card">
+                    <img src="deck3.jpg" alt="Deck Común">
+                    <h3>Deck Común</h3>
+                    <p>Perfecto para principiantes que quieren iniciarse en Royal Card Duel.</p>
+                    <a href="#" class="btn">Comprar Ahora</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="beneficios" class="beneficios">
+        <div class="container">
+            <h2>¿Por qué Elegirnos?</h2>
+            <div class="benefits">
+                <div class="benefit">
+                    <h3>Envío Rápido y Seguro</h3>
+                    <p>Recibe tus cartas en tiempo récord con nuestro servicio de envío rápido.</p>
+                </div>
+                <div class="benefit">
+                    <h3>Calidad Garantizada</h3>
+                    <p>Nuestras cartas están impresas con materiales de alta calidad para una durabilidad excepcional.</p>
+                </div>
+                <div class="benefit">
+                    <h3>Atención al Cliente 24/7</h3>
+                    <p>Estamos aquí para ayudarte en cualquier momento, cualquier día.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="contacto">
+        <div class="container">
+            <h2>Contacto</h2>
+            <p>¿Tienes alguna pregunta o necesitas asistencia? Contáctanos.</p>
+            <form id="contact-form">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+                <button type="submit" class="btn">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Royal Card Duel. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita el envío por defecto del formulario
+
+            const nombre = document.getElementById('nombre').value;
+            const email = document.getElementById('email').value;
+            const mensaje = document.getElementById('mensaje').value;
+
+            // Validación básica
+            if (nombre && email && mensaje) {
+                alert('Gracias por tu mensaje, ' + nombre + '! Nos pondremos en contacto contigo pronto.');
+                // Aquí podrías enviar los datos del formulario a un servidor si lo deseas.
+                // Por ejemplo, utilizando fetch o XMLHttpRequest.
+                document.getElementById('contact-form').reset(); // Limpia el formulario
+            } else {
+                alert('Por favor, completa todos los campos del formulario.');
+            }
+        });
+
+        // Animaciones al hacer scroll
+        document.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const scrollPos = window.scrollY + window.innerHeight;
+
+            sections.forEach(section => {
+                if (section.offsetTop < scrollPos && section.offsetTop + section.offsetHeight > scrollPos) {
+                    section.classList.add('fade-in');
+                } else {
+                    section.classList.remove('fade-in');
+                }
+            });
+        });
+
+        // Función para mostrar una alerta de bienvenida
+        window.onload = function() {
+            setTimeout(function() {
+                alert('¡Bienvenido a Royal Card Duel! Explora nuestros productos y disfruta de la experiencia.');
+            }, 2000);
+        };
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,38 @@
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    .benefits {
+        flex-direction: column;
+    }
+
+    .benefit {
+        width: 90%;
+        margin: 10px 0;
+    }
+
+    .contacto form {
+        width: 90%;
+    }
+}
+
+/* Animaciones al hacer scroll */
+.fade-in {
+    opacity: 1;
+    transition: opacity 0.6s ease-in-out;
+}
+
+section {
+    opacity: 0;
+}
+
