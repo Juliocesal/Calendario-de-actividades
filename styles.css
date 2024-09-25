@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #ffffff;
+  background-color: #000000;
   display: flex;
   justify-content: center;
   align-items: flex-start; /* Cambiar a flex-start para que se alinee al inicio */
